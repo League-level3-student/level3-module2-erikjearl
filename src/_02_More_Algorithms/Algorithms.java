@@ -1,5 +1,6 @@
 package _02_More_Algorithms;
 
+import java.lang.reflect.Array;
 import java.util.List;
 
 public class Algorithms {
@@ -61,6 +62,27 @@ public class Algorithms {
 	}
 	
 	public static List<String> sortDNA(List<String> egg) {
+		for(int i = 0; i < egg.size() - 1; i++) {
+			for(int j = 0; j < egg.size() - i - 1; j++) {
+				if(egg.get(j).length() > egg.get(j+1).length()) {
+					String temp = egg.get(j);
+					egg.set(j, egg.get(j+1));
+					egg.set(j+1, temp);
+				}
+			}
+		}
+		return egg;
+	}
+	public static List<String> sortWords(List<String> egg) {
+		for(int i = 0; i < egg.size() - 1; i++) {
+			for(int j = 0; j < egg.size() - i - 1; j++) {
+				if(egg.get(j).compareTo(egg.get(j+1)) > 0) {
+					String temp = egg.get(j);
+					egg.set(j, egg.get(j+1));
+					egg.set(j+1, temp);
+				}
+			}
+		}
 		return egg;
 	}
 	
